@@ -130,7 +130,7 @@
 							<label class="form-label-outside">From</label>
 							<div class="form-wrap form-wrap-inline">
 							<select class="form-input" data-placeholder="All" data-minimum-results-for-search="Infinity" name="from">
-								
+
 							<?php  
 								require_once 'inc/connection.php';
 								$sql = "SELECT * FROM `tours`";
@@ -259,7 +259,7 @@
 							<div class="event-default-caption"><a class="button button-xs button-secondary button-nina" href="#">learn more</a></div>
 						</div>
 						<div class="event-default-inner">
-							<h5><a class="event-default-title" href="#"><?php echo $tour['from'] . ', ' . $tour['to'] ?></a></h5><span class="heading-5">from $280</span>
+							<h5><a class="event-default-title" href="#"><?php echo $tour['from'] . ', ' . $tour['to'] ?></a></h5><span class="heading-5">from <?php echo $tour['budget'] ?> Tk</span>
 						</div>
 					</article>
 				</div>
