@@ -130,14 +130,22 @@
 							<label class="form-label-outside">From</label>
 							<div class="form-wrap form-wrap-inline">
 							<select class="form-input" data-placeholder="All" data-minimum-results-for-search="Infinity" name="from">
+								
 							<?php  
 								require_once 'inc/connection.php';
 								$sql = "SELECT * FROM `tours`";
 																										
 								$result = mysqli_query( $conn, $sql );
 
+								$from = [];
 								while($row = mysqli_fetch_assoc($result)){
-									echo "<option value='{$row['from']}'>{$row['from']}</option>";
+									if( !in_array($row['from'], $from, true) ){
+										$from[] = $row['from'];
+									}
+								}
+
+								foreach($from as $sFrom){
+									echo "<option value='{$sFrom}'>{$sFrom}</option>";						
 								}
 							?>
 							</select>
@@ -149,8 +157,15 @@
 							<select class="form-input" data-placeholder="All" data-minimum-results-for-search="Infinity" name="to">
 								<?php 
 									mysqli_data_seek($result, 0);
+
+									$to = [];
 									while($row = mysqli_fetch_assoc($result)){
-										echo "<option value='{$row['to']}'>{$row['to']}</option>";
+										if( !in_array($row['to'], $to, true) ){
+											$to[] = $row['to'];
+										}
+									}
+									foreach($to as $sTo){
+										echo "<option value='{$sTo}'>{$sTo}</option>";						
 									}
 								?>
 							</select>
