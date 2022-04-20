@@ -60,7 +60,7 @@
                                 <td>
                                     <form action="" method="POST">
                                         <input type="hidden" name="id" value="<?php echo $row['id'] ?>">
-                                        <input type="submit" name="delete_tour" class="btn btn-danger" value="Delete Booking" onclick="return confirm('Are you sure you want to delete this booking?')">
+                                        <input type="submit" name="delete_tour" class="btn btn-danger" value="Delete Tour" onclick="return confirm('Are you sure you want to delete this booking?')">
                                     </form>
                                 </td>
                             </tr>
